@@ -33,4 +33,14 @@ price = 59
 txt = f"The price is {price} dollars"
 print(txt)
 
+# 6. String startswith()
+txt = "Hello, welcome to my world."
+x = txt.startswith("Hello")
+print(x)
+
+# 7. String endswith()
+txt = "Hello, welcome to my world."
+x = txt.endswith(".")
+print(x)
+
 
