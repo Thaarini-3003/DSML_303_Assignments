@@ -6,6 +6,25 @@ import json
 df = pd.read_csv('student_habits_performance.csv')
 df = pd.DataFrame(df)
 print(df.head())
+print(df.tail())
+print(df[5:10])
+print(df[10:])
+print(df.loc[4:10])
+print(df.iloc[4:10,0:2])
+print(df.dtypes)
+print(df.describe())
+print(df.info())
+print(df.shape)
+print(df.ndim)
+
+#read only the column names
+column_names = df.columns
+print(column_names)
+
+# removing the column which is not in use or which is not needed
+df = pd.read_csv("student_habits_performance.csv")
+df.drop(columns=["netflix_hours"], inplace=True)
+print(df.columns)
 
 # read specific columns of csv file using Pandas
 df = pd.read_csv("student_habits_performance.csv", usecols=["student_id", "exam_score"])
@@ -24,6 +43,7 @@ print("Skip rows", df)
 df = pd.read_csv("student_habits_performance.csv", skiprows = [0, 2, 5])
 print("Skip rows at specific position")
 print(df)
+
 
 """ 2. Excel file using Pandas"""
 
