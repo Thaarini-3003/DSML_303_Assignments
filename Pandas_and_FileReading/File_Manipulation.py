@@ -16,15 +16,17 @@ print(df.describe())
 print(df.info())
 print(df.shape)
 print(df.ndim)
+print(df[["student_id"]].head(5))
+print(df[["student_id","age","gender"]].head(5))
 
 #read only the column names
 column_names = df.columns
-print(column_names)
+print("\n",column_names)
 
 # removing the column which is not in use or which is not needed
 df = pd.read_csv("student_habits_performance.csv")
 df.drop(columns=["netflix_hours"], inplace=True)
-print(df.columns)
+print("\n",df.columns)
 
 # read specific columns of csv file using Pandas
 df = pd.read_csv("student_habits_performance.csv", usecols=["student_id", "exam_score"])
@@ -43,6 +45,27 @@ print("Skip rows", df)
 df = pd.read_csv("student_habits_performance.csv", skiprows = [0, 2, 5])
 print("Skip rows at specific position")
 print(df)
+
+# making data frame from csv file using indexing
+data = pd.read_csv("student_habits_performance.csv", index_col ="student_id")
+
+# retrieving row by loc method
+first = data.loc["S1000"]
+second = data.loc["S1014"]
+
+print(first, "\n\n\n", second)
+
+# Select multiple rows
+first = data.loc[["S1000", "S1024"]]
+print(first)
+
+# Select two rows and three columns
+first = data.loc[["S1000", "S1024"], ["netflix_hours", "extracurricular_participation", "exam_score"]]
+print(first)
+
+# Select all rows and specific columns
+first = data.loc[:, ["netflix_hours", "extracurricular_participation", "exam_score"]]
+print(first)
 
 
 """ 2. Excel file using Pandas"""
