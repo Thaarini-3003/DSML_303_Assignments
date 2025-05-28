@@ -131,3 +131,49 @@ plt.title("No. of passengers (1000s) ")
 sns.heatmap(flights_df)
 plt.show()
 
+# Example: Heatmap
+data = np.random.rand(10, 12)
+sns.heatmap(data, cmap='viridis')
+plt.title('Heatmap Example')
+plt.show()
+
+
+# 6. Pie chart
+
+data = [15, 25, 25, 30, 5]
+labels = ['Group 1', 'Group 2', 'Group 3', 'Group 4', 'Group 5']
+
+colors = sns.color_palette('pastel')[0:5]
+
+plt.pie(data, labels = labels, colors = colors, autopct='%.0f%%', explode = [0, 0, 0, 0.2, 0])
+plt.title("Pie chart")
+plt.show()
+
+# 7. Radar chart
+
+import matplotlib.pyplot as plt
+import numpy as np
+# Example: Radar Chart
+categories = ['A', 'B', 'C', 'D', 'E']
+values = [4, 2, 5, 3, 1]
+angles = np.linspace(0, 2 * np.pi, len(categories), endpoint=False)
+values += values[:1]
+# Ensure that angles array has the same length as values
+angles = np.concatenate((angles, [angles[0]]))
+plt.polar(angles, values, marker='o')
+plt.title('Radar Chart Example')
+plt.show()
+
+
+# 8 . AREA chart
+
+import matplotlib.pyplot as plt
+# Example: Area Chart
+x = [1, 2, 3, 4, 5]
+y = [2, 4, 6, 8, 10]
+plt.fill_between(x, y, color='skyblue', alpha=0.4)
+plt.xlabel('X-axis Label')
+plt.ylabel('Y-axis Label')
+plt.title('Area Chart Example')
+plt.show()
+
